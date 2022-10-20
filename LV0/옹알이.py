@@ -1,4 +1,4 @@
-babbling = ["ayaye", "uuu", "yeye", "yemawoo", "ayaayaa"]	
+babbling = ["ayayeayayeayaye" ]	
 발음 = ["aya", "ye", "woo", "ma"]
 
 def solution(babbling):
@@ -8,18 +8,20 @@ def solution(babbling):
             if i == j:
                 c += 1
             elif i.startswith(j) and i != j:
-                for k in 발음:
-                    if k != j and i == (j+k):
-                        c += 1
-                    elif i.startswith(j+k) and i != (j+k):
-                        for l in 발음:
-                            if l != k and i == (j+k+l):
-                                c += 1  
-                            elif i.startswith(j+k+l) and i != (j+k+l):
-                                for m in 발음:
-                                    if m != l and i == (j+k+l+m):
-                                        c += 1
-    
+                last = j
+                c += a(i, j, last, c)
+
     return c
+
+
+def a(i, j, last, c):
+    for k in 발음:
+        if k != last:
+            if i == (j+k):
+                c += 1
+                return c
+            elif i.startswith(j+k) and i != (j+k):
+                last = k
+                a(i, j+k, last, c)
 
 print(solution(babbling))
