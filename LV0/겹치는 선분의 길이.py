@@ -11,13 +11,15 @@ def solution(lines):
     x = lines[0][1]
     y = lines[1][1]
     z = lines[2][1]
-    print(lines)
+    xyz = [x, y, z]
+    xyz.sort()
+    print(xyz)
     if a == b == c:
-        차이 += y - a
+        차이 = xyz[1] - a
     elif a < b == c:
-        차이 += y - b
+        차이 = y - b
     elif a == b < c:
-        차이 += x - a
+        차이 = x - a
         if y > c:
             차이 += y - c
         if x > c:
