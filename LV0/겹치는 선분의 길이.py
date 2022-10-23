@@ -19,11 +19,11 @@ def solution(lines):
     elif a < b == c:
         차이 = xyz[1] - b
     elif a == b < c:
-        차이 = x - a
-        if y > c:
-            차이 += y - c
-        if x > c:
-            차이 -= (x - c)
+        차이 = xyz[0] - a
+        if xyz[1] > c:
+            차이 += xyz[1] > c
+        if xyz[0] > c:
+            차이 -= (xyz[0] - c)
     elif a < b < c:
         if x > b: 
             차이 += x - b
