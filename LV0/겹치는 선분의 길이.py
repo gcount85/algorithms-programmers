@@ -17,7 +17,7 @@ def solution(lines):
     if a == b == c:
         차이 = xyz[1] - a
     elif a < b == c:
-        차이 = y - b
+        차이 = xyz[1] - b
     elif a == b < c:
         차이 = x - a
         if y > c:
